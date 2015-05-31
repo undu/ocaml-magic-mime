@@ -21,3 +21,8 @@ val lookup : string -> string
     supplied by examining its extension and look it up by using
     {!Mime_types.map_extension} or {!Mime_Types.map_file} if there
     is no file extension present. *)
+
+val detect : string -> string
+(** [detect content] will return a MIME type for the file [content]
+    by examining at most the first 512 bytes.  If the content is
+    not recognized, returns "application/octet-stream". *)

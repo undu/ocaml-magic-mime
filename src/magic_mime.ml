@@ -27,3 +27,7 @@ let lookup filename =
   match get_extension filename with
   | "" -> Mime_types.map_file filename
   | ext -> Mime_types.map_extension (String.lowercase_ascii ext)
+
+(* Detect MIME type from file contents *)
+let detect content =
+  Mime_detect.detect content
